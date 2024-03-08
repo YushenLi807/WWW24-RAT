@@ -1,0 +1,1 @@
+ 20240307-190717,[command] python run_expid.py --config ./configs/RAT_m2/kkbox_x1 --expid RAT_m2_kkbox_x1_10fold_retrieval --gpu 1,[exp_id] RAT_m2_kkbox_x1_10fold_retrieval,[dataset_id] kkbox_x1_10fold_retrieval,[train] N.A.,[val] AUC: 0.849688 - logloss: 0.481581,[test] AUC: 0.849994 - logloss: 0.481199

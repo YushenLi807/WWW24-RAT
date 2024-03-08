@@ -1,0 +1,252 @@
+2024-03-07 14:53:47,513 P1726698 INFO {
+    "batch_norm": "False",
+    "batch_size": "4096",
+    "data_format": "csv",
+    "data_root": "./data/",
+    "dataset_id": "movielenslatest_x1_10fold_retrieval",
+    "debug": "False",
+    "depth": "4",
+    "dim_head": "10",
+    "dnn_activations": "relu",
+    "dnn_hidden_units": "[400, 400, 400]",
+    "dropout": "0.0",
+    "emb_dropout": "0.0",
+    "embedding_dim": "10",
+    "embedding_regularizer": "0.03",
+    "epochs": "100",
+    "every_x_epochs": "1",
+    "feature_cols": "[{'active': True, 'dtype': 'float', 'name': ['user_id', 'item_id', 'tag_id'], 'type': 'categorical'}]",
+    "gpu": "0",
+    "label_col": "{'dtype': 'float', 'name': 'label'}",
+    "layer_norm": "True",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['AUC', 'logloss']",
+    "min_categr_count": "1",
+    "model": "RAT_m2",
+    "model_id": "RAT_m2_movielenslatest_x1_10fold_retrieval",
+    "model_root": "./exps/RAT_m2/",
+    "monitor": "AUC",
+    "monitor_mode": "max",
+    "net_dropout": "0",
+    "net_regularizer": "0",
+    "num_heads": "2",
+    "num_workers": "3",
+    "optimizer": "adam",
+    "patience": "2",
+    "pickle_feature_encoder": "True",
+    "pool": "cls",
+    "retrieval_augmented": "True",
+    "retrieval_configs": "{'used_cols': ['user_id', 'item_id', 'tag_id'], 'exact_match_cols': [], 'split_type': '10-fold', 'label_wise': False, 'pool_ratio': 0.2, 'pre_retrieval': True, 'enable_clean': True, 'qry_batch_size': 5000, 'db_chunk_size': 50000, 'device': 'cuda:7', 'topK': 5}",
+    "save_best_only": "True",
+    "scale_dim": "4",
+    "seed": "2021",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "./data/movielenslatest_x1/test.csv",
+    "train_data": "./data/movielenslatest_x1/train.csv",
+    "use_hdf5": "True",
+    "use_residual": "True",
+    "use_scale": "True",
+    "use_wide": "True",
+    "valid_data": "./data/movielenslatest_x1/valid.csv",
+    "verbose": "1",
+    "version": "pytorch"
+}
+2024-03-07 14:53:47,514 P1726698 INFO Set up feature encoder...
+2024-03-07 14:53:47,514 P1726698 INFO Load feature_map from json: ./data/movielenslatest_x1_10fold_retrieval/feature_map.json
+2024-03-07 14:53:47,514 P1726698 INFO Loading data...
+2024-03-07 14:53:47,515 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/train.h5
+2024-03-07 14:53:47,536 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/retrieval_5_train.h5
+2024-03-07 14:53:47,561 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/retrieval_5_train.h5
+2024-03-07 14:53:47,591 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/retrieval_5_train.h5
+2024-03-07 14:53:47,606 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/valid.h5
+2024-03-07 14:53:47,614 P1726698 INFO 10-fold retrieval, pool file: ./data/movielenslatest_x1_10fold_retrieval/train.h5
+2024-03-07 14:53:47,614 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/train.h5
+2024-03-07 14:53:47,635 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/retrieval_5_valid.h5
+2024-03-07 14:53:47,644 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/retrieval_5_valid.h5
+2024-03-07 14:53:47,652 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/retrieval_5_valid.h5
+2024-03-07 14:53:47,657 P1726698 INFO Train samples: total/1404801, pos/467878, neg/936923, ratio/33.31%, blocks/1
+2024-03-07 14:53:47,657 P1726698 INFO Validation samples: total/401372, pos/134225, neg/267147, ratio/33.44%, blocks/1
+2024-03-07 14:53:47,657 P1726698 INFO Loading train data done.
+2024-03-07 14:53:47,657 P1726698 INFO Loading data...
+2024-03-07 14:53:47,657 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/test.h5
+2024-03-07 14:53:47,662 P1726698 INFO 10-fold retrieval, pool file: ./data/movielenslatest_x1_10fold_retrieval/train.h5
+2024-03-07 14:53:47,662 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/train.h5
+2024-03-07 14:53:47,683 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/retrieval_5_test.h5
+2024-03-07 14:53:47,688 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/retrieval_5_test.h5
+2024-03-07 14:53:47,694 P1726698 INFO Loading data from h5: ./data/movielenslatest_x1_10fold_retrieval/retrieval_5_test.h5
+2024-03-07 14:53:47,697 P1726698 INFO Test samples: total/200686, pos/66850, neg/133836, ratio/33.31%, blocks/1
+2024-03-07 14:53:47,697 P1726698 INFO Loading test data done.
+2024-03-07 14:53:50,062 P1726698 INFO Total number of parameters: 1337241.
+2024-03-07 14:53:50,063 P1726698 INFO Start training: 343 batches/epoch
+2024-03-07 14:53:50,063 P1726698 INFO ************ Epoch=1 start ************
+2024-03-07 14:54:20,889 P1726698 INFO [Metrics] AUC: 0.953901 - logloss: 0.234279
+2024-03-07 14:54:20,890 P1726698 INFO Save best model: monitor(max): 0.953901
+2024-03-07 14:54:20,902 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 14:54:20,971 P1726698 INFO Train loss: 0.825261
+2024-03-07 14:54:20,972 P1726698 INFO ************ Epoch=1 end ************
+2024-03-07 14:54:51,597 P1726698 INFO [Metrics] AUC: 0.957520 - logloss: 0.224572
+2024-03-07 14:54:51,598 P1726698 INFO Save best model: monitor(max): 0.957520
+2024-03-07 14:54:51,625 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 14:54:51,714 P1726698 INFO Train loss: 0.635299
+2024-03-07 14:54:51,715 P1726698 INFO ************ Epoch=2 end ************
+2024-03-07 14:55:21,806 P1726698 INFO [Metrics] AUC: 0.960060 - logloss: 0.217120
+2024-03-07 14:55:21,806 P1726698 INFO Save best model: monitor(max): 0.960060
+2024-03-07 14:55:21,823 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 14:55:21,911 P1726698 INFO Train loss: 0.557777
+2024-03-07 14:55:21,911 P1726698 INFO ************ Epoch=3 end ************
+2024-03-07 14:55:52,369 P1726698 INFO [Metrics] AUC: 0.962373 - logloss: 0.209506
+2024-03-07 14:55:52,370 P1726698 INFO Save best model: monitor(max): 0.962373
+2024-03-07 14:55:52,397 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 14:55:52,484 P1726698 INFO Train loss: 0.526705
+2024-03-07 14:55:52,484 P1726698 INFO ************ Epoch=4 end ************
+2024-03-07 14:56:22,915 P1726698 INFO [Metrics] AUC: 0.962898 - logloss: 0.206038
+2024-03-07 14:56:22,916 P1726698 INFO Save best model: monitor(max): 0.962898
+2024-03-07 14:56:22,943 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 14:56:23,035 P1726698 INFO Train loss: 0.509909
+2024-03-07 14:56:23,036 P1726698 INFO ************ Epoch=5 end ************
+2024-03-07 14:56:53,396 P1726698 INFO [Metrics] AUC: 0.964206 - logloss: 0.199736
+2024-03-07 14:56:53,396 P1726698 INFO Save best model: monitor(max): 0.964206
+2024-03-07 14:56:53,424 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 14:56:53,520 P1726698 INFO Train loss: 0.499112
+2024-03-07 14:56:53,520 P1726698 INFO ************ Epoch=6 end ************
+2024-03-07 14:57:24,028 P1726698 INFO [Metrics] AUC: 0.964573 - logloss: 0.198264
+2024-03-07 14:57:24,028 P1726698 INFO Save best model: monitor(max): 0.964573
+2024-03-07 14:57:24,043 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 14:57:24,128 P1726698 INFO Train loss: 0.492468
+2024-03-07 14:57:24,128 P1726698 INFO ************ Epoch=7 end ************
+2024-03-07 14:57:54,693 P1726698 INFO [Metrics] AUC: 0.965482 - logloss: 0.195290
+2024-03-07 14:57:54,694 P1726698 INFO Save best model: monitor(max): 0.965482
+2024-03-07 14:57:54,724 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 14:57:54,807 P1726698 INFO Train loss: 0.484026
+2024-03-07 14:57:54,808 P1726698 INFO ************ Epoch=8 end ************
+2024-03-07 14:58:25,278 P1726698 INFO [Metrics] AUC: 0.966077 - logloss: 0.193181
+2024-03-07 14:58:25,279 P1726698 INFO Save best model: monitor(max): 0.966077
+2024-03-07 14:58:25,293 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 14:58:25,379 P1726698 INFO Train loss: 0.475216
+2024-03-07 14:58:25,380 P1726698 INFO ************ Epoch=9 end ************
+2024-03-07 14:58:56,034 P1726698 INFO [Metrics] AUC: 0.966374 - logloss: 0.193182
+2024-03-07 14:58:56,035 P1726698 INFO Save best model: monitor(max): 0.966374
+2024-03-07 14:58:56,055 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 14:58:56,157 P1726698 INFO Train loss: 0.471500
+2024-03-07 14:58:56,158 P1726698 INFO ************ Epoch=10 end ************
+2024-03-07 14:59:26,639 P1726698 INFO [Metrics] AUC: 0.966630 - logloss: 0.190635
+2024-03-07 14:59:26,640 P1726698 INFO Save best model: monitor(max): 0.966630
+2024-03-07 14:59:26,667 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 14:59:26,757 P1726698 INFO Train loss: 0.462161
+2024-03-07 14:59:26,757 P1726698 INFO ************ Epoch=11 end ************
+2024-03-07 14:59:57,454 P1726698 INFO [Metrics] AUC: 0.966994 - logloss: 0.190791
+2024-03-07 14:59:57,455 P1726698 INFO Save best model: monitor(max): 0.966994
+2024-03-07 14:59:57,487 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 14:59:57,614 P1726698 INFO Train loss: 0.461368
+2024-03-07 14:59:57,614 P1726698 INFO ************ Epoch=12 end ************
+2024-03-07 15:00:27,901 P1726698 INFO [Metrics] AUC: 0.967345 - logloss: 0.188291
+2024-03-07 15:00:27,901 P1726698 INFO Save best model: monitor(max): 0.967345
+2024-03-07 15:00:27,928 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:00:28,026 P1726698 INFO Train loss: 0.449319
+2024-03-07 15:00:28,026 P1726698 INFO ************ Epoch=13 end ************
+2024-03-07 15:00:58,721 P1726698 INFO [Metrics] AUC: 0.968000 - logloss: 0.187004
+2024-03-07 15:00:58,722 P1726698 INFO Save best model: monitor(max): 0.968000
+2024-03-07 15:00:58,753 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:00:58,850 P1726698 INFO Train loss: 0.440959
+2024-03-07 15:00:58,850 P1726698 INFO ************ Epoch=14 end ************
+2024-03-07 15:01:30,095 P1726698 INFO [Metrics] AUC: 0.968642 - logloss: 0.184294
+2024-03-07 15:01:30,096 P1726698 INFO Save best model: monitor(max): 0.968642
+2024-03-07 15:01:30,124 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:01:30,213 P1726698 INFO Train loss: 0.430525
+2024-03-07 15:01:30,213 P1726698 INFO ************ Epoch=15 end ************
+2024-03-07 15:02:00,411 P1726698 INFO [Metrics] AUC: 0.969891 - logloss: 0.183628
+2024-03-07 15:02:00,412 P1726698 INFO Save best model: monitor(max): 0.969891
+2024-03-07 15:02:00,426 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:02:00,554 P1726698 INFO Train loss: 0.413326
+2024-03-07 15:02:00,555 P1726698 INFO ************ Epoch=16 end ************
+2024-03-07 15:02:31,210 P1726698 INFO [Metrics] AUC: 0.970913 - logloss: 0.177582
+2024-03-07 15:02:31,211 P1726698 INFO Save best model: monitor(max): 0.970913
+2024-03-07 15:02:31,225 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:02:31,331 P1726698 INFO Train loss: 0.398396
+2024-03-07 15:02:31,332 P1726698 INFO ************ Epoch=17 end ************
+2024-03-07 15:03:02,251 P1726698 INFO [Metrics] AUC: 0.971802 - logloss: 0.174963
+2024-03-07 15:03:02,252 P1726698 INFO Save best model: monitor(max): 0.971802
+2024-03-07 15:03:02,266 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:03:02,385 P1726698 INFO Train loss: 0.387697
+2024-03-07 15:03:02,385 P1726698 INFO ************ Epoch=18 end ************
+2024-03-07 15:03:32,808 P1726698 INFO [Metrics] AUC: 0.973227 - logloss: 0.169543
+2024-03-07 15:03:32,808 P1726698 INFO Save best model: monitor(max): 0.973227
+2024-03-07 15:03:32,830 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:03:32,940 P1726698 INFO Train loss: 0.379688
+2024-03-07 15:03:32,940 P1726698 INFO ************ Epoch=19 end ************
+2024-03-07 15:04:03,254 P1726698 INFO [Metrics] AUC: 0.973849 - logloss: 0.167817
+2024-03-07 15:04:03,255 P1726698 INFO Save best model: monitor(max): 0.973849
+2024-03-07 15:04:03,269 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:04:03,386 P1726698 INFO Train loss: 0.377566
+2024-03-07 15:04:03,387 P1726698 INFO ************ Epoch=20 end ************
+2024-03-07 15:04:34,803 P1726698 INFO [Metrics] AUC: 0.974534 - logloss: 0.165916
+2024-03-07 15:04:34,803 P1726698 INFO Save best model: monitor(max): 0.974534
+2024-03-07 15:04:34,817 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:04:34,927 P1726698 INFO Train loss: 0.378238
+2024-03-07 15:04:34,928 P1726698 INFO ************ Epoch=21 end ************
+2024-03-07 15:05:05,655 P1726698 INFO [Metrics] AUC: 0.974859 - logloss: 0.165034
+2024-03-07 15:05:05,655 P1726698 INFO Save best model: monitor(max): 0.974859
+2024-03-07 15:05:05,669 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:05:05,776 P1726698 INFO Train loss: 0.376230
+2024-03-07 15:05:05,776 P1726698 INFO ************ Epoch=22 end ************
+2024-03-07 15:05:35,981 P1726698 INFO [Metrics] AUC: 0.975078 - logloss: 0.163598
+2024-03-07 15:05:35,981 P1726698 INFO Save best model: monitor(max): 0.975078
+2024-03-07 15:05:35,995 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:05:36,131 P1726698 INFO Train loss: 0.375430
+2024-03-07 15:05:36,132 P1726698 INFO ************ Epoch=23 end ************
+2024-03-07 15:06:06,980 P1726698 INFO [Metrics] AUC: 0.975480 - logloss: 0.162140
+2024-03-07 15:06:06,980 P1726698 INFO Save best model: monitor(max): 0.975480
+2024-03-07 15:06:07,000 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:06:07,108 P1726698 INFO Train loss: 0.378076
+2024-03-07 15:06:07,108 P1726698 INFO ************ Epoch=24 end ************
+2024-03-07 15:06:37,696 P1726698 INFO [Metrics] AUC: 0.975724 - logloss: 0.160613
+2024-03-07 15:06:37,697 P1726698 INFO Save best model: monitor(max): 0.975724
+2024-03-07 15:06:37,711 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:06:37,817 P1726698 INFO Train loss: 0.377818
+2024-03-07 15:06:37,818 P1726698 INFO ************ Epoch=25 end ************
+2024-03-07 15:07:07,996 P1726698 INFO [Metrics] AUC: 0.975735 - logloss: 0.160678
+2024-03-07 15:07:07,997 P1726698 INFO Save best model: monitor(max): 0.975735
+2024-03-07 15:07:08,011 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:07:08,125 P1726698 INFO Train loss: 0.382675
+2024-03-07 15:07:08,125 P1726698 INFO ************ Epoch=26 end ************
+2024-03-07 15:07:38,592 P1726698 INFO [Metrics] AUC: 0.975985 - logloss: 0.159703
+2024-03-07 15:07:38,592 P1726698 INFO Save best model: monitor(max): 0.975985
+2024-03-07 15:07:38,611 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:07:38,698 P1726698 INFO Train loss: 0.380661
+2024-03-07 15:07:38,698 P1726698 INFO ************ Epoch=27 end ************
+2024-03-07 15:08:09,285 P1726698 INFO [Metrics] AUC: 0.975916 - logloss: 0.159588
+2024-03-07 15:08:09,286 P1726698 INFO Monitor(max) STOP: 0.975916 !
+2024-03-07 15:08:09,286 P1726698 INFO Reduce learning rate on plateau: 0.000100
+2024-03-07 15:08:09,287 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:08:09,380 P1726698 INFO Train loss: 0.385292
+2024-03-07 15:08:09,381 P1726698 INFO ************ Epoch=28 end ************
+2024-03-07 15:08:40,743 P1726698 INFO [Metrics] AUC: 0.980244 - logloss: 0.143813
+2024-03-07 15:08:40,744 P1726698 INFO Save best model: monitor(max): 0.980244
+2024-03-07 15:08:40,759 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:08:40,877 P1726698 INFO Train loss: 0.285568
+2024-03-07 15:08:40,878 P1726698 INFO ************ Epoch=29 end ************
+2024-03-07 15:09:10,864 P1726698 INFO [Metrics] AUC: 0.980539 - logloss: 0.143818
+2024-03-07 15:09:10,865 P1726698 INFO Save best model: monitor(max): 0.980539
+2024-03-07 15:09:10,886 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:09:10,977 P1726698 INFO Train loss: 0.201552
+2024-03-07 15:09:10,977 P1726698 INFO ************ Epoch=30 end ************
+2024-03-07 15:09:40,630 P1726698 INFO [Metrics] AUC: 0.979241 - logloss: 0.148072
+2024-03-07 15:09:40,630 P1726698 INFO Monitor(max) STOP: 0.979241 !
+2024-03-07 15:09:40,630 P1726698 INFO Reduce learning rate on plateau: 0.000010
+2024-03-07 15:09:40,631 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:09:40,723 P1726698 INFO Train loss: 0.174885
+2024-03-07 15:09:40,723 P1726698 INFO ************ Epoch=31 end ************
+2024-03-07 15:10:11,176 P1726698 INFO [Metrics] AUC: 0.978361 - logloss: 0.155629
+2024-03-07 15:10:11,177 P1726698 INFO Monitor(max) STOP: 0.978361 !
+2024-03-07 15:10:11,177 P1726698 INFO Reduce learning rate on plateau: 0.000001
+2024-03-07 15:10:11,177 P1726698 INFO Early stopping at epoch=32
+2024-03-07 15:10:11,178 P1726698 INFO --- 343/343 batches finished ---
+2024-03-07 15:10:11,273 P1726698 INFO Train loss: 0.145937
+2024-03-07 15:10:11,273 P1726698 INFO Training finished.
+2024-03-07 15:10:11,273 P1726698 INFO Load best model: /data1/wangjinpeng/liyusheng/RAT/exps/RAT_m2/movielenslatest_x1_10fold_retrieval/RAT_m2_movielenslatest_x1_10fold_retrieval.model
+2024-03-07 15:10:11,303 P1726698 INFO ****** Validation evaluation ******
+2024-03-07 15:10:15,043 P1726698 INFO [Metrics] AUC: 0.980539 - logloss: 0.143818
+2024-03-07 15:10:15,228 P1726698 INFO ******** Test evaluation ********
+2024-03-07 15:10:16,988 P1726698 INFO [Metrics] AUC: 0.980878 - logloss: 0.142098

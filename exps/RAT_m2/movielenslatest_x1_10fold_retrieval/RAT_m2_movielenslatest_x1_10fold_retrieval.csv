@@ -1,0 +1,1 @@
+ 20240307-151016,[command] python run_expid.py --config ./configs/RAT_m2/movielenslatest_x1 --expid RAT_m2_movielenslatest_x1_10fold_retrieval --gpu 0,[exp_id] RAT_m2_movielenslatest_x1_10fold_retrieval,[dataset_id] movielenslatest_x1_10fold_retrieval,[train] N.A.,[val] AUC: 0.980539 - logloss: 0.143818,[test] AUC: 0.980878 - logloss: 0.142098

@@ -1,0 +1,137 @@
+movielenslatest_x1:
+    data_format: csv
+    data_root: ./data/
+    feature_cols:
+    -   active: true
+        dtype: float
+        name: [user_id, item_id, tag_id]
+        type: categorical
+    label_col: {dtype: float, name: label}
+    min_categr_count: 1
+    test_data: ./data/movielenslatest_x1/test.csv
+    train_data: ./data/movielenslatest_x1/train.csv
+    valid_data: ./data/movielenslatest_x1/valid.csv
+movielenslatest_x1_retrieval:
+    data_format: csv
+    data_root: ./data/
+    feature_cols:
+    -   active: true
+        dtype: float
+        name: [user_id, item_id, tag_id]
+        type: categorical
+    label_col: {dtype: float, name: label}
+    min_categr_count: 1
+    test_data: ./data/movielenslatest_x1/test.csv
+    train_data: ./data/movielenslatest_x1/train.csv
+    valid_data: ./data/movielenslatest_x1/valid.csv
+    retrieval_configs:
+        used_cols: [user_id, item_id, tag_id]
+        exact_match_cols: []
+        # 要么显式指定retrieval_pool_data的文件名，要么设置pool_ratio，从train_data里面分离
+        # retrieval_pool_data: ./data/movielenslatest_x1/retrieval_pool.csv
+        split_type: sequential # 可选： "sequential", "random", "<X>-fold"
+        label_wise: false # if true 则会有两倍的数据量，负样本取topK，正样本取topK
+        pool_ratio: 0.2 # 只有当split_type不是"X-fold"的时候有效
+        # 可用11G处理，有了db_chunk_size之后就不需要管db_size了
+        # batch_size * db_chunk_size * field_num < 400000000
+        # batch_size 要大一点，速度才快一些，跟db_chunk_size尽量均匀
+        pre_retrieval: true
+        # 是否及时清理显存和内存垃圾，如果是可以防止显存爆炸的问题，但是用时会变成接近2倍
+        enable_clean: false
+        qry_batch_size: 5000
+        db_chunk_size: 50000
+        device: "cuda:2"
+        topK: 5
+movielenslatest_x1_10fold_retrieval:
+    data_format: csv
+    data_root: ./data/
+    feature_cols:
+    -   active: true
+        dtype: float
+        name: [user_id, item_id, tag_id]
+        type: categorical
+    label_col: {dtype: float, name: label}
+    min_categr_count: 1
+    test_data: ./data/movielenslatest_x1/test.csv
+    train_data: ./data/movielenslatest_x1/train.csv
+    valid_data: ./data/movielenslatest_x1/valid.csv
+    retrieval_configs:
+        used_cols: [user_id, item_id, tag_id]
+        exact_match_cols: []
+        # 要么显式指定retrieval_pool_data的文件名，要么设置pool_ratio，从train_data里面分离
+        # retrieval_pool_data: ./data/movielenslatest_x1/retrieval_pool.csv
+        split_type: "10-fold" # 可选： "sequential", "random", "<X>-fold"
+        label_wise: false # if true 则会有两倍的数据量，负样本取topK，正样本取topK
+        pool_ratio: 0.2 # 只有当split_type不是"X-fold"的时候有效
+        # 可用11G处理，有了db_chunk_size之后就不需要管db_size了
+        # batch_size * db_chunk_size * field_num < 400000000
+        # batch_size 要大一点，速度才快一些，跟db_chunk_size尽量均匀
+        pre_retrieval: true
+        # 是否及时清理显存和内存垃圾，如果是可以防止显存爆炸的问题，但是用时会变成接近2倍
+        enable_clean: true
+        qry_batch_size: 5000
+        db_chunk_size: 50000
+        device: "cuda:7"
+        topK: 5
+movielenslatest_x1_labelwise_retrieval:
+    data_format: csv
+    data_root: ./data/
+    feature_cols:
+    -   active: true
+        dtype: float
+        name: [user_id, item_id, tag_id]
+        type: categorical
+    label_col: {dtype: float, name: label}
+    min_categr_count: 1
+    test_data: ./data/movielenslatest_x1/test.csv
+    train_data: ./data/movielenslatest_x1/train.csv
+    valid_data: ./data/movielenslatest_x1/valid.csv
+    retrieval_configs:
+        used_cols: [user_id, item_id, tag_id]
+        exact_match_cols: []
+        # 要么显式指定retrieval_pool_data的文件名，要么设置pool_ratio，从train_data里面分离
+        # retrieval_pool_data: ./data/movielenslatest_x1/retrieval_pool.csv
+        split_type: "sequential" # 可选： "sequential", "random", "<X>-fold"
+        label_wise: true # if true 则会有两倍的数据量，负样本取topK，正样本取topK
+        pool_ratio: 0.2 # 只有当split_type不是"X-fold"的时候有效
+        # 可用11G处理，有了db_chunk_size之后就不需要管db_size了
+        # batch_size * db_chunk_size * field_num < 400000000
+        # batch_size 要大一点，速度才快一些，跟db_chunk_size尽量均匀
+        pre_retrieval: true
+        # 是否及时清理显存和内存垃圾，如果是可以防止显存爆炸的问题，但是用时会变成接近2倍
+        enable_clean: true
+        qry_batch_size: 5000
+        db_chunk_size: 50000
+        device: "cuda:4"
+        topK: 5
+movielenslatest_x1_labelwise_10fold_retrieval:
+    data_format: csv
+    data_root: ./data/
+    feature_cols:
+    -   active: true
+        dtype: float
+        name: [user_id, item_id, tag_id]
+        type: categorical
+    label_col: {dtype: float, name: label}
+    min_categr_count: 1
+    test_data: ./data/movielenslatest_x1/test.csv
+    train_data: ./data/movielenslatest_x1/train.csv
+    valid_data: ./data/movielenslatest_x1/valid.csv
+    retrieval_configs:
+        used_cols: [user_id, item_id, tag_id]
+        exact_match_cols: []
+        # 要么显式指定retrieval_pool_data的文件名，要么设置pool_ratio，从train_data里面分离
+        # retrieval_pool_data: ./data/movielenslatest_x1/retrieval_pool.csv
+        split_type: "10-fold" # 可选： "sequential", "random", "<X>-fold"
+        label_wise: true # if true 则会有两倍的数据量，负样本取topK，正样本取topK
+        pool_ratio: 0.2 # 只有当split_type不是"X-fold"的时候有效
+        # 可用11G处理，有了db_chunk_size之后就不需要管db_size了
+        # batch_size * db_chunk_size * field_num < 400000000
+        # batch_size 要大一点，速度才快一些，跟db_chunk_size尽量均匀
+        pre_retrieval: true
+        # 是否及时清理显存和内存垃圾，如果是可以防止显存爆炸的问题，但是用时会变成接近2倍
+        enable_clean: true
+        qry_batch_size: 4000
+        db_chunk_size: 50000
+        device: "cuda:1"
+        topK: 5
