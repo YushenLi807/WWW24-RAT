@@ -245,7 +245,7 @@
 2024-03-07 15:10:11,178 P1726698 INFO --- 343/343 batches finished ---
 2024-03-07 15:10:11,273 P1726698 INFO Train loss: 0.145937
 2024-03-07 15:10:11,273 P1726698 INFO Training finished.
-2024-03-07 15:10:11,273 P1726698 INFO Load best model: /data1/wangjinpeng/liyusheng/RAT/exps/RAT_m2/movielenslatest_x1_10fold_retrieval/RAT_m2_movielenslatest_x1_10fold_retrieval.model
+2024-03-07 15:10:11,273 P1726698 INFO Load best model: /data1/RAT/exps/RAT_m2/movielenslatest_x1_10fold_retrieval/RAT_m2_movielenslatest_x1_10fold_retrieval.model
 2024-03-07 15:10:11,303 P1726698 INFO ****** Validation evaluation ******
 2024-03-07 15:10:15,043 P1726698 INFO [Metrics] AUC: 0.980539 - logloss: 0.143818
 2024-03-07 15:10:15,228 P1726698 INFO ******** Test evaluation ********
