@@ -73,7 +73,7 @@ We provide trained RAT checkpoints. You can download them from Baiduyun disk.
 | ---- | ---- |
 | Movielenslatest_10fold_retrieval | [Baidu disk](https://pan.baidu.com/s/1Y6PcI4oxdEt_VT6pVZ31cg?pwd=0000) |
 | KKBox_10fold_retrieval | [Baidu disk](https://pan.baidu.com/s/1ANvK91PC0Dp1NLQsCMfzCg?pwd=0000) |
-| Tmall_002_retrieval | [Baidu disk]() |
+| Tmall_002_retrieval | [Baidu disk](https://pan.baidu.com/s/1aII61WjlZ3apnY7zUj35zA?pwd=0000) |
 
 ## Results
 For this repository, the expected performance is:
