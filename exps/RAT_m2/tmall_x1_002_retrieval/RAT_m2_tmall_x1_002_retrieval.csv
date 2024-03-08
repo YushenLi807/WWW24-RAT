@@ -1,0 +1,1 @@
+ 20240308-165707,[command] python run_expid.py --config ./configs/RAT_m2/tmall_x1_002 --expid RAT_m2_tmall_x1_002_retrieval --gpu 0,[exp_id] RAT_m2_tmall_x1_002_retrieval,[dataset_id] tmall_x1_002_retrieval,[train] N.A.,[val] AUC: 0.958882 - logloss: 0.319120,[test] AUC: 0.958882 - logloss: 0.319120

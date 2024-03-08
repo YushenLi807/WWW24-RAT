@@ -1,0 +1,160 @@
+2024-03-07 15:00:10,681 P23391 INFO {
+    "batch_norm": "True",
+    "batch_size": "4096",
+    "data_format": "csv",
+    "data_root": "./data/",
+    "dataset_id": "tmall_x1_002_retrieval",
+    "debug": "False",
+    "depth": "4",
+    "dim_head": "10",
+    "dnn_activations": "relu",
+    "dnn_hidden_units": "[200, 80]",
+    "dropout": "0.0",
+    "emb_dropout": "0.1",
+    "embedding_dim": "10",
+    "embedding_regularizer": "0.07",
+    "epochs": "100",
+    "every_x_epochs": "1",
+    "feature_cols": "[{'active': False, 'dtype': 'str', 'name': 'time_stamp', 'type': 'categorical'}, {'active': True, 'dtype': 'str', 'name': ['user_id', 'item_id', 'cat_id', 'seller_id', 'brand_id', 'action_type', 'age_range', 'gender'], 'type': 'categorical'}]",
+    "gpu": "0",
+    "label_col": "{'dtype': 'float', 'name': 'label'}",
+    "layer_norm": "True",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['AUC', 'logloss']",
+    "min_categr_count": "2",
+    "model": "RAT_m2",
+    "model_id": "RAT_m2_tmall_x1_002_retrieval",
+    "model_root": "./exps/RAT_m2/",
+    "monitor": "AUC",
+    "monitor_mode": "max",
+    "net_dropout": "0.08",
+    "num_heads": "32",
+    "num_workers": "3",
+    "optimizer": "adam",
+    "patience": "2",
+    "pickle_feature_encoder": "True",
+    "pool": "cls",
+    "retrieval_augmented": "True",
+    "retrieval_configs": "{'used_cols': ['user_id', 'item_id', 'cat_id', 'seller_id', 'brand_id'], 'exact_match_cols': [], 'retrieval_pool_data': './data/tmall/retrieval_pool.csv', 'split_type': 'sequential', 'label_wise': False, 'pre_retrieval': True, 'enable_clean': True, 'qry_batch_size': 2500, 'db_chunk_size': 50000, 'device': 'cuda:4', 'topK': 5}",
+    "save_best_only": "True",
+    "scale_dim": "2",
+    "seed": "2021",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "./data/tmall/test.csv",
+    "train_data": "./data/tmall/train.csv",
+    "use_hdf5": "True",
+    "use_residual": "True",
+    "use_scale": "True",
+    "use_wide": "True",
+    "valid_data": "./data/tmall/test.csv",
+    "verbose": "1",
+    "version": "pytorch"
+}
+2024-03-07 15:00:10,682 P23391 INFO Set up feature encoder...
+2024-03-07 15:00:10,682 P23391 INFO Load feature_map from json: ./data/tmall_x1_002_retrieval/feature_map.json
+2024-03-07 15:00:10,683 P23391 INFO Loading data...
+2024-03-07 15:00:10,684 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/train.h5
+2024-03-07 15:00:11,794 P23391 INFO sequential retrieval, pool file: ./data/tmall_x1_002_retrieval/retrieval_pool.h5
+2024-03-07 15:00:11,795 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/retrieval_pool.h5
+2024-03-07 15:00:18,038 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/retrieval_5_train.h5
+2024-03-07 15:00:18,632 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/retrieval_5_train.h5
+2024-03-07 15:00:19,177 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/retrieval_5_train.h5
+2024-03-07 15:00:19,386 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/valid.h5
+2024-03-07 15:00:20,399 P23391 INFO sequential retrieval, pool file: ./data/tmall_x1_002_retrieval/retrieval_pool.h5
+2024-03-07 15:00:20,399 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/retrieval_pool.h5
+2024-03-07 15:00:23,504 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/retrieval_5_valid.h5
+2024-03-07 15:00:24,054 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/retrieval_5_valid.h5
+2024-03-07 15:00:24,580 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/retrieval_5_valid.h5
+2024-03-07 15:00:24,811 P23391 INFO Train samples: total/20038830, pos/10019415, neg/10019415, ratio/50.00%, blocks/1
+2024-03-07 15:00:24,811 P23391 INFO Validation samples: total/21165358, pos/10582679, neg/10582679, ratio/50.00%, blocks/1
+2024-03-07 15:00:24,811 P23391 INFO Loading train data done.
+2024-03-07 15:00:24,811 P23391 INFO Loading data...
+2024-03-07 15:00:24,812 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/test.h5
+2024-03-07 15:00:25,833 P23391 INFO sequential retrieval, pool file: ./data/tmall_x1_002_retrieval/retrieval_pool.h5
+2024-03-07 15:00:25,833 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/retrieval_pool.h5
+2024-03-07 15:00:28,786 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/retrieval_5_test.h5
+2024-03-07 15:00:29,740 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/retrieval_5_test.h5
+2024-03-07 15:00:30,723 P23391 INFO Loading data from h5: ./data/tmall_x1_002_retrieval/retrieval_5_test.h5
+2024-03-07 15:00:30,986 P23391 INFO Test samples: total/21165358, pos/10582679, neg/10582679, ratio/50.00%, blocks/1
+2024-03-07 15:00:30,986 P23391 INFO Loading test data done.
+2024-03-07 15:00:36,897 P23391 INFO Total number of parameters: 16970282.
+2024-03-07 15:00:36,898 P23391 INFO Start training: 4893 batches/epoch
+2024-03-07 15:00:36,898 P23391 INFO ************ Epoch=1 start ************
+2024-03-07 16:58:06,946 P23391 INFO [Metrics] AUC: 0.923379 - logloss: 0.351799
+2024-03-07 16:58:06,972 P23391 INFO Save best model: monitor(max): 0.923379
+2024-03-07 16:58:07,136 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-07 16:58:07,728 P23391 INFO Train loss: 2.598780
+2024-03-07 16:58:07,728 P23391 INFO ************ Epoch=1 end ************
+2024-03-07 18:55:27,264 P23391 INFO [Metrics] AUC: 0.927150 - logloss: 0.344271
+2024-03-07 18:55:27,289 P23391 INFO Save best model: monitor(max): 0.927150
+2024-03-07 18:55:27,465 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-07 18:55:28,005 P23391 INFO Train loss: 7.437167
+2024-03-07 18:55:28,006 P23391 INFO ************ Epoch=2 end ************
+2024-03-07 20:52:42,492 P23391 INFO [Metrics] AUC: 0.926103 - logloss: 0.345201
+2024-03-07 20:52:42,517 P23391 INFO Monitor(max) STOP: 0.926103 !
+2024-03-07 20:52:42,517 P23391 INFO Reduce learning rate on plateau: 0.000100
+2024-03-07 20:52:42,518 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-07 20:52:43,059 P23391 INFO Train loss: 9.978365
+2024-03-07 20:52:43,059 P23391 INFO ************ Epoch=3 end ************
+2024-03-07 22:50:06,517 P23391 INFO [Metrics] AUC: 0.941625 - logloss: 0.313187
+2024-03-07 22:50:06,542 P23391 INFO Save best model: monitor(max): 0.941625
+2024-03-07 22:50:06,713 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-07 22:50:07,228 P23391 INFO Train loss: 1.907958
+2024-03-07 22:50:07,228 P23391 INFO ************ Epoch=4 end ************
+2024-03-08 00:47:33,892 P23391 INFO [Metrics] AUC: 0.941941 - logloss: 0.315604
+2024-03-08 00:47:33,917 P23391 INFO Save best model: monitor(max): 0.941941
+2024-03-08 00:47:34,089 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-08 00:47:34,639 P23391 INFO Train loss: 0.683836
+2024-03-08 00:47:34,639 P23391 INFO ************ Epoch=5 end ************
+2024-03-08 02:44:51,932 P23391 INFO [Metrics] AUC: 0.942040 - logloss: 0.315846
+2024-03-08 02:44:51,956 P23391 INFO Save best model: monitor(max): 0.942040
+2024-03-08 02:44:52,125 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-08 02:44:52,637 P23391 INFO Train loss: 0.688092
+2024-03-08 02:44:52,638 P23391 INFO ************ Epoch=6 end ************
+2024-03-08 04:42:05,984 P23391 INFO [Metrics] AUC: 0.942007 - logloss: 0.317439
+2024-03-08 04:42:06,008 P23391 INFO Monitor(max) STOP: 0.942007 !
+2024-03-08 04:42:06,008 P23391 INFO Reduce learning rate on plateau: 0.000010
+2024-03-08 04:42:06,009 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-08 04:42:06,553 P23391 INFO Train loss: 0.685020
+2024-03-08 04:42:06,553 P23391 INFO ************ Epoch=7 end ************
+2024-03-08 06:39:15,308 P23391 INFO [Metrics] AUC: 0.955114 - logloss: 0.294062
+2024-03-08 06:39:15,332 P23391 INFO Save best model: monitor(max): 0.955114
+2024-03-08 06:39:15,500 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-08 06:39:16,002 P23391 INFO Train loss: 0.360999
+2024-03-08 06:39:16,002 P23391 INFO ************ Epoch=8 end ************
+2024-03-08 08:36:24,876 P23391 INFO [Metrics] AUC: 0.954813 - logloss: 0.302368
+2024-03-08 08:36:24,907 P23391 INFO Monitor(max) STOP: 0.954813 !
+2024-03-08 08:36:24,907 P23391 INFO Reduce learning rate on plateau: 0.000001
+2024-03-08 08:36:24,908 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-08 08:36:25,753 P23391 INFO Train loss: 0.223530
+2024-03-08 08:36:25,753 P23391 INFO ************ Epoch=9 end ************
+2024-03-08 10:33:38,585 P23391 INFO [Metrics] AUC: 0.958335 - logloss: 0.311174
+2024-03-08 10:33:38,608 P23391 INFO Save best model: monitor(max): 0.958335
+2024-03-08 10:33:38,786 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-08 10:33:39,607 P23391 INFO Train loss: 0.179367
+2024-03-08 10:33:39,607 P23391 INFO ************ Epoch=10 end ************
+2024-03-08 12:30:50,931 P23391 INFO [Metrics] AUC: 0.958882 - logloss: 0.319120
+2024-03-08 12:30:50,955 P23391 INFO Save best model: monitor(max): 0.958882
+2024-03-08 12:30:51,152 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-08 12:30:51,861 P23391 INFO Train loss: 0.157098
+2024-03-08 12:30:51,862 P23391 INFO ************ Epoch=11 end ************
+2024-03-08 14:28:33,530 P23391 INFO [Metrics] AUC: 0.958384 - logloss: 0.327350
+2024-03-08 14:28:33,556 P23391 INFO Monitor(max) STOP: 0.958384 !
+2024-03-08 14:28:33,556 P23391 INFO Reduce learning rate on plateau: 0.000001
+2024-03-08 14:28:33,557 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-08 14:28:34,348 P23391 INFO Train loss: 0.145452
+2024-03-08 14:28:34,348 P23391 INFO ************ Epoch=12 end ************
+2024-03-08 16:26:18,789 P23391 INFO [Metrics] AUC: 0.957837 - logloss: 0.338065
+2024-03-08 16:26:18,810 P23391 INFO Monitor(max) STOP: 0.957837 !
+2024-03-08 16:26:18,810 P23391 INFO Reduce learning rate on plateau: 0.000001
+2024-03-08 16:26:18,810 P23391 INFO Early stopping at epoch=13
+2024-03-08 16:26:18,811 P23391 INFO --- 4893/4893 batches finished ---
+2024-03-08 16:26:19,533 P23391 INFO Train loss: 0.138128
+2024-03-08 16:26:19,533 P23391 INFO Training finished.
+2024-03-08 16:26:19,533 P23391 INFO Load best model: /data1/RAT/exps/RAT_m2/tmall_x1_002_retrieval/RAT_m2_tmall_x1_002_retrieval.model
+2024-03-08 16:26:19,685 P23391 INFO ****** Validation evaluation ******
+2024-03-08 16:41:43,645 P23391 INFO [Metrics] AUC: 0.958882 - logloss: 0.319120
+2024-03-08 16:41:44,559 P23391 INFO ******** Test evaluation ********
+2024-03-08 16:57:07,224 P23391 INFO [Metrics] AUC: 0.958882 - logloss: 0.319120
