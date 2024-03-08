@@ -1,7 +1,7 @@
 # RAT: Retrieval-Augmented Transformer for Click-Through Rate Prediction
 
 This repository is the official PyTorch implementation of our WWW 2024 short paper.
-<img src="figures/framework.jpg" alt="Framework" style="width: 60%;">
+<img src="figures/framework.jpg" style="width: 60%;">
 
 ## Catalogue <br> 
 * [1. Getting Started](#getting-started)
